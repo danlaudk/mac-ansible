@@ -1,1 +1,11 @@
 venv
+# Ignore everything in roles dir...
+roles/*
+
+# ... external role requirement file
+!roles/requirements.yml
+
+# ... and configured custom/local roles
+!roles/adam_mac/
+
+

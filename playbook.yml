@@ -9,4 +9,6 @@
 - hosts: localhost
   connection: local
   roles:
+  - ansible-role-jenv
   - adam_mac
+

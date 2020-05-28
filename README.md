@@ -1,9 +1,9 @@
 mac-ansible
 ===========
 
-I use this project to configure my macOS the way I like it. That way I can wipe
-and re-install with less effort. See my
-[blog post](https://adamj.eu/tech/2019/03/20/how-i-provision-my-macbook-with-ansible/).
+I use this project to configure my macOS the way I like it. 
+Includes role to install jenv and openjdk
+Forked from [blog post](https://adamj.eu/tech/2019/03/20/how-i-provision-my-macbook-with-ansible/).
 
 Getting Started
 ---------------
@@ -14,8 +14,9 @@ Getting Started
 4. Make sure pyenv's python on path (it will be after my shell settings are in place from playbook)
 5. `python -m venv venv`
 6. `source venv/bin/activate`
-5. `pip install ansible` (always the best way to install Ansible)
-6. Then `./playbook.yml`
+7. `pip install ansible` (always the best way to install Ansible)
+8. `ansible-galaxy install -r roles/requirements.yml`
+6. Then `ansible-playbook -K ./playbook.yml`   (-K prompts for sudo password)
 
 Fork! Copy! Adapt!
 ------------------

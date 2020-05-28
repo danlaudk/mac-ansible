@@ -45,7 +45,7 @@
   register: pyenv_install_result
   failed_when: >
     pyenv_install_result.rc != 0 and
-    pyenv_install_result.stderr_lines != ["pyenv: /Users/chainz/.pyenv/versions/" + item + " already exists"]
+    pyenv_install_result.stderr_lines != ["pyenv: /Users/dlau30132/.pyenv/versions/" + item + " already exists"]
   loop: '{{ pyenv_python_versions }}'
   tags:
   - python
@@ -64,7 +64,6 @@
 - name: python versions latest Cython, pip, and pip-tools
   pip:
     name:
-    - Cython
     - pip
     - pip-tools
     state: latest
@@ -88,10 +87,4 @@
   - python
   - pip
 
-- name: Install gem packages
-  gem:
-    name: '{{ item }}'
-    state: latest
-  loop: '{{ gem_packages }}'
-  tags:
-  - gem
+
